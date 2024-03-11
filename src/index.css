@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App .search{
+  position: absolute;
+  z-index: 999;
+}
+
+.App{
+  
+  width: 250%;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: rgb(222, 239, 224);
+}
+
+.App .weather-main, .App .soil, .App .map, .App .hour, .App .forcast{
+  text-align: left;
+  border-radius: 10px;
+  background-color: rgb(255, 253, 246);
+}
+
+.App .weather-main{
+  position: absolute;
+  width: 21rem;
+  height: 20rem;
+  top: 7.5%;
+  margin-left: 3rem;
+}
+
+.App .weather-main .main-title, .App .forcast .forcast-title, .App .soil .soil-title, .App .hour .hourlyforcast-title {
+  color: rgb(50, 115, 56);
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.main-temp{
+  position: absolute;
+  color: rgb(50, 115, 56);
+  font-weight:450;
+  font-size: 4rem;
+  margin-left: 14rem;
+  margin-top: 25px;
+}
+
+.App .weather-main .main-description{
+  color: rgb(50, 115, 56);
+  position: absolute;
+  font-size: 1rem;
+  margin-left: 13.5rem;
+  margin-top: 9%;
+}
+
+.main-description{
+  color: rgb(50, 115, 56);
+  margin-left: 14.5rem;
+  margin-top: 115px;
+}
+
+.App .weather-main .weather-image img {
+  width: 8rem;
+  height: auto;
+  margin-left: 2rem;
+}
+
+.App .weather-info {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  display: flex;
+  font-size: 0.5rem;
+}
+
+.style {
+  margin-left: 95px;
+  padding-top: 79px;
+  color: #327338;
+  font-size: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-right:11px;
+}
+
+.humidity {
+  margin-left: px; /* Adjusted value based on your layout */
+}
+
+
+
+.info-item >*{
+  margin-right: 1.5rem;
+}
+
+.weather-info {
+  color: #327338;
+}
+
+.App .forcast{
+  position: absolute;
+  width: 21rem;
+  height: 24rem;
+  padding: 0.rem;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  top: 47%
+}
+
+.App .forcast .forcast-title{
+  color: rgb(50, 115, 56);
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.forecast-content {
+  display: flex;
+  justify-content:space-between;
+  margin-block: 0.4rem;
+  margin-inline: 2.7rem;
+  font-size: 0.8rem;
+}
+
+.forecast-content img {
+  margin-top: 0.5rem;
+  width: 10%;
+  height: 10%;
+}
+
+.App .crop1{
+  background-color: rgb(126, 185, 131);
+  border-radius: 10px;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 25.5rem;
+  top: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .crop2{
+  background-color: rgb(255, 253, 246);
+  border-radius: 10px;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 34rem;
+  top: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .crop3{
+  background-color: rgb(126, 185, 131);
+  border-radius: 10px;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 42.5rem;
+  top: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .crop4{
+  background-color: rgb(255, 253, 246);
+  border-radius: 10px;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 51rem;
+  top: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .crop5{
+  background-color: rgb(126, 185, 131);
+  border-radius: 10px;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 59.5rem;
+  top: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map{
+  width: 42rem;
+  height: 10.5rem;
+  margin-left: 25.5rem;
+  position: absolute;
+  top: 69%;
+}
+.App .soil{
+  position: absolute;
+  width: 17rem;
+  height: 20rem;
+  margin-left: 68.5rem;
+  top: 7.5%
+} 
+
+.App .hour{
+  width: 60rem;
+  height: 24rem;
+  margin-top: 1rem;
+  margin-left: 25.5rem;
+  position: absolute;
+  top: 47%
+}
+
+
+.main-tempp{
+  color: rgb(50, 115, 56);
+  position: absolute;
+  top: 0%;
+  font-weight:450;
+  font-size: 4rem;
+  margin-left: 11rem;
+}
