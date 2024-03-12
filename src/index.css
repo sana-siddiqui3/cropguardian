@@ -74,17 +74,17 @@ code {
 }
 
 .style {
-  margin-left: 95px;
   padding-top: 79px;
   color: #327338;
+  padding-left: 95px;
   font-size: 0.5rem;
   display: flex;
   justify-content: space-between;
-  margin-right:11px;
+  margin-right: 8%;
 }
 
-.humidity {
-  margin-left: px; /* Adjusted value based on your layout */
+.style div {
+  width: 80px;
 }
 
 .info-item >*{

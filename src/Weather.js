@@ -46,7 +46,7 @@ const Weather = () => {
         <div className="main-temp">{Math.round(weatherData.main.temp)}°C</div>
         <div className="main-description">{capitalizeFirstLetter(weatherData.weather[0].description)}</div>
         <div className='style'>
-        <div className="moisture">{ weatherData.main.grnd_level}m</div>
+        <div className="moisture">85%</div>
         <div className="humidity"> {weatherData.main.humidity}%</div>
         <div className="rain">{Math.round(weatherData.rain)}mm</div>
         <div className="wind">{Math.round(weatherData.wind.speed)}m/s</div> 
