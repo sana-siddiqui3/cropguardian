@@ -18,8 +18,7 @@ code {
 }
 
 .App{
-  
-  width: 250%;
+  width: 200vh;
   min-height: 100vh;
   padding: 1rem;
   background-color: rgb(222, 239, 224);
@@ -60,14 +59,16 @@ code {
   margin-top: 115px;
 }
 
-.App .weather-main .weather-image img {
-  width: 8rem;
-  height: auto;
-  margin-left: 2rem;
+.current-weather-icon {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  margin-left: 4rem;
+  top: 12%;
 }
 
 .App .weather-info {
-  margin-top: 1rem;
+  margin-top: 10.3rem;
   margin-left: 3rem;
   display: flex;
   font-size: 0.5rem;
@@ -80,7 +81,18 @@ code {
   font-size: 0.5rem;
   display: flex;
   justify-content: space-between;
-  margin-right: 8%;
+}
+
+.wind{
+  padding-right: 21%;
+}
+
+.humidity{
+  padding-left: 18px;
+}
+
+.rain{
+  padding-right: 4%;
 }
 
 .style div {
@@ -111,18 +123,21 @@ code {
   margin-left: 1rem;
 }
 
-.forecast-content {
+.forecast-container {
+  margin-top: 10.25rem;
+  color: #327338;
+}
+
+.forecast-content{
   display: flex;
   justify-content:space-between;
-  margin-block: 0.4rem;
-  margin-inline: 2.7rem;
+  margin-left: 5rem;
+  margin-right: 6.75rem;
   font-size: 0.8rem;
 }
 
-.forecast-content img {
-  margin-top: 0.5rem;
-  width: 10%;
-  height: 10%;
+.days-weather-icon{
+  margin-top: -6px; 
 }
 
 .App .crop1{
@@ -197,6 +212,7 @@ code {
   position: absolute;
   top: 69%;
 }
+
 .App .soil{
   position: absolute;
   width: 17rem;
@@ -212,22 +228,4 @@ code {
   margin-left: 25.5rem;
   position: absolute;
   top: 47%
-}
-
-
-
-.App .weather-main .main-description{
-  color: rgb(50, 115, 56);
-  position: absolute;
-  font-size: 1rem;
-  margin-left: 13.5rem;
-  margin-top: 9%;
-}
-.main-tempp{
-  color: rgb(50, 115, 56);
-  position: absolute;
-  top: 0%;
-  font-weight:450;
-  font-size: 4rem;
-  margin-left: 11rem;
 }

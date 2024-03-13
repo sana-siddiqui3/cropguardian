@@ -51,26 +51,25 @@ function App() {
           <p>Current Weather</p>
         </div>
 
-        <div className="weather-image">
-          <img src="weather-app.png" alt="Weather" />
-        </div>
-
         <div className="weather-info">
           <div className="info-item">
             <CarbonSoilMoistureField width={28} height={28} fill="#327338" />
             <p>&nbsp;</p>
             <p>Soil moisture</p>
           </div>
+
           <div className="info-item">
             <MaterialSymbolsHumidityLowOutline width={28} height={28} fill="#327338" />
             <p>&nbsp;</p>
             <p>Humidity</p>
           </div>
+
           <div className="info-item">
             <TdesignRainLight width={34} height={28} fill="#327338" />
             <p>&nbsp;</p>
             <p>Precipitation</p>
           </div>
+
           <div className="info-item">
             <TablerWind width={28} height={28} fill="#327338" />
             <p>&nbsp;</p>
@@ -82,47 +81,6 @@ function App() {
       <div className="forcast">
         <div className="forcast-title">
           <p>Forcast</p>
-        </div>
-        <div className="forecast-content">
-          <img src="sun.png" alt="Weather" />
-            <p>22°/15°</p>
-            <p>Feb 13, Tue</p>
-        </div>
-
-        <div className="forecast-content">
-          <img src="cloud.png" alt="Weather" />
-            <p>22°/15°</p>
-            <p>Feb 13, Tue</p>
-        </div>
-
-        <div className="forecast-content">
-          <img src="weather-app.png" alt="Weather" />
-            <p>22°/15°</p>
-            <p>Feb 13, Tue</p>
-        </div>
-
-        <div className="forecast-content">
-          <img src="sun.png" alt="Weather" />
-            <p>22°/15°</p>
-            <p>Feb 13, Tue</p>
-        </div>
-
-        <div className="forecast-content">
-          <img src="heavy-rain.png" alt="Weather" />
-            <p>22°/15°</p>
-            <p>Feb 13, Tue</p>
-        </div>
-
-        <div className="forecast-content">
-          <img src="storm.png" alt="Weather" />
-            <p>22°/15°</p>
-            <p>Feb 13, Tue</p>
-        </div>
-
-        <div className="forecast-content">
-          <img src="cloud.png" alt="Weather" />
-            <p>22°/15°</p>
-            <p>Feb 13, Tue</p>
         </div>
       </div>
 
@@ -153,8 +111,6 @@ function App() {
           <p>Hourly forcast</p>
         </div>
       </div>
-
-
 
     </div>
   );
