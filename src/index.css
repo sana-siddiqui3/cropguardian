@@ -139,7 +139,7 @@ code {
 .days-weather-icon{
   margin-top: -6px; 
 }
-
+/*
 .App .crop1{
   background-color: rgb(126, 185, 131);
   border-radius: 10px;
@@ -203,6 +203,49 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+*/
+
+.App .crop-container {
+  position: absolute;
+  top: 9%;
+  display: flex;
+  margin-left: 24.6rem;
+  align-items: center;
+}
+
+.App .crop {
+  background-color: rgb(126, 185, 131);
+  border-radius: 10px;
+  display: flex;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.App .crop-popout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the background color and opacity */
+  width: 100%;
+  height: 100%;
+  z-index: 9999; /* Ensure it appears on top of other content */
+}
+
+.App .crop-popout-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white; /* Adjust the background color */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .map{
