@@ -12,25 +12,29 @@ code {
     monospace;
 }
 
-.App .search{
+.App .search {
   position: absolute;
   z-index: 999;
 }
 
-.App{
+.App {
   width: 200vh;
   min-height: 100vh;
   padding: 1rem;
   background-color: rgb(222, 239, 224);
 }
 
-.App .weather-main, .App .soil, .App .map, .App .hour, .App .forcast{
+.App .weather-main,
+.App .soil,
+.App .map,
+.App .hour,
+.App .forcast {
   text-align: left;
   border-radius: 10px;
   background-color: rgb(255, 253, 246);
 }
 
-.App .weather-main{
+.App .weather-main {
   position: absolute;
   width: 21rem;
   height: 20rem;
@@ -38,22 +42,25 @@ code {
   margin-left: 3rem;
 }
 
-.App .weather-main .main-title, .App .forcast .forcast-title, .App .soil .soil-title, .App .hour .hourlyforcast-title {
+.App .weather-main .main-title,
+.App .forcast .forcast-title,
+.App .soil .soil-title,
+.App .hour .hourlyforcast-title {
   color: rgb(50, 115, 56);
   font-weight: bold;
   margin-left: 1rem;
 }
 
-.main-temp{
+.main-temp {
   position: absolute;
   color: rgb(50, 115, 56);
-  font-weight:450;
+  font-weight: 450;
   font-size: 4rem;
   margin-left: 14rem;
   margin-top: 25px;
 }
 
-.main-description{
+.main-description {
   color: rgb(50, 115, 56);
   margin-left: 14.5rem;
   margin-top: 115px;
@@ -83,15 +90,15 @@ code {
   justify-content: space-between;
 }
 
-.wind{
+.wind {
   padding-right: 21%;
 }
 
-.humidity{
+.humidity {
   padding-left: 18px;
 }
 
-.rain{
+.rain {
   padding-right: 4%;
 }
 
@@ -99,7 +106,7 @@ code {
   width: 80px;
 }
 
-.info-item >*{
+.info-item>* {
   margin-right: 1.5rem;
 }
 
@@ -107,7 +114,7 @@ code {
   color: #327338;
 }
 
-.App .forcast{
+.App .forcast {
   position: absolute;
   width: 21rem;
   height: 24rem;
@@ -117,7 +124,7 @@ code {
   top: 47%
 }
 
-.App .forcast .forcast-title{
+.App .forcast .forcast-title {
   color: rgb(50, 115, 56);
   font-weight: bold;
   margin-left: 1rem;
@@ -128,17 +135,18 @@ code {
   color: #327338;
 }
 
-.forecast-content{
+.forecast-content {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   margin-left: 5rem;
   margin-right: 6.75rem;
   font-size: 0.8rem;
 }
 
-.days-weather-icon{
-  margin-top: -6px; 
+.days-weather-icon {
+  margin-top: -6px;
 }
+
 /*
 .App .crop1{
   background-color: rgb(126, 185, 131);
@@ -205,13 +213,28 @@ code {
   align-items: center;
 }
 */
-
-.App .crop-container {
+.App{
+  display: flex;
+}
+.App .mid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 9%;
-  display: flex;
   margin-left: 24.6rem;
-  align-items: center;
+  
+}
+
+.App .crop-container {
+  display: flex;
+}
+
+.App .map-container {
+  display: flex;
+  max-height: 23vh; 
+  margin-top: 0.5rem;
+  overflow-y: auto; 
 }
 
 .App .crop {
@@ -231,10 +254,12 @@ code {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8); /* Adjust the background color and opacity */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Adjust the background color and opacity */
   width: 100%;
   height: 100%;
-  z-index: 9999; /* Ensure it appears on top of other content */
+  z-index: 9999;
+  /* Ensure it appears on top of other content */
 }
 
 .App .crop-popout-content {
@@ -242,13 +267,14 @@ code {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white; /* Adjust the background color */
+  background-color: white;
+  /* Adjust the background color */
   padding: 20px;
   border-radius: 8px;
   text-align: center;
 }
 
-.map{
+.map {
   width: 42rem;
   height: 10.5rem;
   margin-left: 25.5rem;
@@ -256,15 +282,15 @@ code {
   top: 69%;
 }
 
-.App .soil{
+.App .soil {
   position: absolute;
   width: 17rem;
   height: 20rem;
   margin-left: 68.5rem;
   top: 7.5%
-} 
+}
 
-.App .hour{
+.App .hour {
   width: 60rem;
   height: 24rem;
   margin-top: 1rem;
@@ -274,8 +300,6 @@ code {
 }
 
 .form-container {
-  margin-left: 3.1rem; /* Align the content to the right */
+  margin-left: 3.1rem;
+  /* Align the content to the right */
 }
-
-
-
