@@ -272,3 +272,10 @@ code {
   position: absolute;
   top: 47%
 }
+
+.form-container {
+  margin-left: 3.1rem; /* Align the content to the right */
+}
+
+
+

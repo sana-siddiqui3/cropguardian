@@ -91,7 +91,7 @@ function App() {
 
       <div className="forcast">
         <div className="forcast-title">
-          <p>Forcast</p>
+          <p>Forecast</p>
         </div>
       </div>
 
@@ -146,7 +146,7 @@ function App() {
     
       <div className="hour">
         <div className="hourlyforcast-title">
-          <p>Hourly forcast</p>
+          <p>Hourly forecast</p>
         </div>
       </div>
 
