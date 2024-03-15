@@ -17,16 +17,17 @@ const Weather = () => {
         );
 
         const forecastResponse = await axios.get(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=7de782c975d88bc1d52483ddf682d5e3`
+            `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&units=metric&appid=7de782c975d88bc1d52483ddf682d5e3`
         );
 
         setWeatherData(response.data);
         setForecastData(forecastResponse.data.list);
         
-        console.log(response.data); //You can see all the weather data in console log
+        console.log(forecastResponse.data.list); //You can see all the weather data in console log
         } catch (error) {
              console.error(error);
         }
+        
     };
 
     const handleInputChange = (e) => {
@@ -38,12 +39,12 @@ const Weather = () => {
         fetchData();
     };
 
-    const formatDate = (dateStr) => {
-        const date = new Date(dateStr);
-        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
-    };
+    function formatDate(timestamp) {
+        var milliseconds = timestamp * 1000;
+        var dateObject = new Date(milliseconds);
+        var formattedDate = dateObject.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        return formattedDate;
+    }
 
     const getWeatherIconUrl = (iconCode) => {
         return `http://openweathermap.org/img/w/${iconCode}.png`;
@@ -75,17 +76,17 @@ const Weather = () => {
         </div>
 
         <div className="forecast-container">
-            {forecastData && forecastData.slice(0, 7).map((item, index) => (
-                <div key={index}>
-                    <div className="forecast-content">
-                            {item.weather[0].icon && (
-                                <img src={getWeatherIconUrl(item.weather[0].icon)} alt="Weather Icon" className="days-weather-icon"/>
-                            )}
-                        <div>{Math.round(item.main.temp_max)}°/{Math.round(item.main.temp_min)}°</div>
-                        <div>{formatDate(item.dt_txt)}</div>
-                    </div>
+        {forecastData && forecastData.slice(0, 7).map((item, index) => (
+            <div key={index}>
+                <div className="forecast-content">
+                    {item.weather[0].icon && (
+                        <img src={getWeatherIconUrl(item.weather[0].icon)} alt="Weather Icon" className="days-weather-icon"/>
+                    )}
+                    <div>{Math.round(item.temp.max)}°/{Math.round(item.temp.min)}°</div>
+                    <div>{formatDate(item.dt)}</div>
                 </div>
-            ))}
+            </div>
+        ))}
         </div>
 
         </>
