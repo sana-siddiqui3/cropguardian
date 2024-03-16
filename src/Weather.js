@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Chart from 'chart.js/auto';
 
 function capitalizeFirstLetter(str) {
     return str.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -10,6 +11,8 @@ const Weather = () => {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
     const [forecastData, setForecastData] = useState(null);
+    const [hourlyForecast, setHourlyForecast] = useState([]);
+
     const fetchData = async () => {
         try {
             const response = await axios.get(
@@ -20,8 +23,15 @@ const Weather = () => {
             `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&units=metric&appid=7de782c975d88bc1d52483ddf682d5e3`
         );
 
+        const hourlyResponse = await axios.get(
+            `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=72bc0dc335e7839c0c085d683e32a15c`
+        );
+
         setWeatherData(response.data);
         setForecastData(forecastResponse.data.list);
+        const hourlyData = hourlyResponse.data.list.slice(0, 9); // Get next 24 hours' forecasts with 3 hour breaks
+        setHourlyForecast(hourlyData);
+        drawChart(hourlyData);
         
         console.log(forecastResponse.data.list); //You can see all the weather data in console log
         } catch (error) {
@@ -29,6 +39,10 @@ const Weather = () => {
         }
         
     };
+
+    useEffect(() => {
+        drawChart(hourlyForecast);
+    }, [hourlyForecast]);
 
     const handleInputChange = (e) => {
         setCity(e.target.value);
@@ -45,6 +59,49 @@ const Weather = () => {
         var formattedDate = dateObject.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
         return formattedDate;
     }
+
+    const drawChart = (hourlyData) => {
+        const label = hourlyData.map(entry => {
+            const dateTime = new Date(entry.dt_txt);
+            return dateTime.toLocaleTimeString('en-UK', {hour: '2-digit'});
+        });
+    
+        const chartElement1 = document.getElementById('hourlyChartTemp');
+        if (!chartElement1) {
+            console.error("Canvas element not found.");
+            return;
+        }
+
+        //Destroy existing chart if it exists
+       if (window.chartInstance1) {
+            window.chartInstance1.destroy();
+       }
+       
+        window.chartInstance1 = new Chart( document.getElementById('hourlyChartTemp'), 
+            {
+                type: 'line',
+                data: {
+                    labels: label,
+                    datasets: [{
+                        label: 'Temperature °C',
+                        data: hourlyData.map(entry => Math.round(entry.main.temp)),
+                        borderColor:'rgb(186, 232, 191)',
+                        lineTension: 0.5,
+                        backgroundColor: 'rgba(186, 232, 191, 0.3)',
+                        fill: true,
+                }
+                ]
+                }
+                ,
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
+            }
+        )
+
+    };
 
     const getWeatherIconUrl = (iconCode) => {
         return `http://openweathermap.org/img/w/${iconCode}.png`;
@@ -93,6 +150,11 @@ const Weather = () => {
         ) : (
             <h2>&nbsp;</h2>
         )}
+
+       
+        <div className="hourlyforcast-container">
+            <canvas id="hourlyChartTemp"></canvas>
+        </div>
         
      </div>
     );

@@ -99,13 +99,13 @@ function App() {
           <div className="crop" onClick={() => handleCropClick('Wheat')}>
             <CircumWheat width={80} height={90} />
           </div>
-          <div className="crop" onClick={() => handleCropClick('Barley')}>
+          <div className="crop1" onClick={() => handleCropClick('Barley')}>
             <MdiBarley width={70} height={100} />
           </div>
           <div className="crop" onClick={() => handleCropClick('Corn')}>
             <MdiCorn width={70} height={90} />
           </div>
-          <div className="crop" onClick={() => handleCropClick('Potato')}>
+          <div className="crop1" onClick={() => handleCropClick('Potato')}>
             <FluentEmojiHighContrastPotato width={50} height={100} />
           </div>
           <div className="crop" onClick={() => handleCropClick('Cotton')}>
@@ -140,9 +140,11 @@ function App() {
 
       <div className="soil">
         <div className="soil-title">
-          <p>It’s the perfect day for spraying</p>
+        <p>It’s the perfect day <span className="sub-text"> for spraying</span></p>
         </div>
       </div>
+
+      <img src="herb.svg" alt="Herb" className="herb-image" />
     
       <div className="hour">
         <div className="hourlyforcast-title">
