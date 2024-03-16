@@ -95,7 +95,8 @@ function App() {
         </div>
       </div>
 
-      <div className="crop-container">
+      <div className = "mid-container">
+       <div className="crop-container">
           <div className="crop" onClick={() => handleCropClick('Wheat')}>
             <CircumWheat width={80} height={90} />
           </div>
@@ -110,8 +111,14 @@ function App() {
           </div>
           <div className="crop" onClick={() => handleCropClick('Cotton')}>
             <FluentMdl2Cotton width={50} height={100} />
-          </div>
+         </div>
+        </div>
+        <div className ="map-container">
+          <p>this is the map container</p>
+        </div>
       </div>
+      
+      
 
       {selectedCrop && (
         <div className="crop-popout">
