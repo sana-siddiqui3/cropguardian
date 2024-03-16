@@ -26,7 +26,6 @@ code {
 
 .App .weather-main,
 .App .soil,
-.App .map,
 .App .hour,
 .App .forcast {
   text-align: left;
@@ -218,10 +217,9 @@ code {
   display: flex;
 }
 .App .mid-container {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: absolute;
   top: 9%;
   margin-left: 24.6rem;
   
@@ -232,11 +230,13 @@ code {
 }
 
 .App .map-container {
-  display: flex;
-  max-height: 23vh; 
   margin-top: 0.5rem;
-  overflow-y: auto; 
+  margin-left: 0.5rem;
+  display: flex;
+  overflow-y: auto;
+  max-height: 10.5rem; 
 }
+
 
 .App .crop, .App .crop1 {
   background-color: rgb(126, 185, 131);
@@ -279,13 +279,7 @@ code {
   text-align: center;
 }
 
-.map {
-  width: 42rem;
-  height: 10.5rem;
-  margin-left: 25.5rem;
-  position: absolute;
-  top: 69%;
-}
+
 
 .App .soil {
   position: absolute;
@@ -330,3 +324,5 @@ code {
   margin-left: 3.1rem;
   /* Align the content to the right */
 }
+
+
