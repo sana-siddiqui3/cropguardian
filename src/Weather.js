@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart from 'chart.js/auto';
 
+
 function capitalizeFirstLetter(str) {
     return str.replace(/\b\w/g, (char) => char.toUpperCase());
   }
   
 
-const Weather = () => {
+const Weather = ({onCityCoordinatesChange}) => {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
     const [forecastData, setForecastData] = useState(null);
@@ -34,6 +35,8 @@ const Weather = () => {
         drawChart(hourlyData);
         
         console.log(forecastResponse.data.list); //You can see all the weather data in console log
+        const coordinates = [response.data.coord.lat, response.data.coord.lon];
+        onCityCoordinatesChange(coordinates); //pass coordinates to App
         } catch (error) {
              console.error(error);
         }

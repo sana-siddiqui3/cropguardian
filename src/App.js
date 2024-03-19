@@ -40,6 +40,11 @@ export function FluentMdl2Cotton(props) {
 
 function App() {
   const [selectedCrop, setSelectedCrop] = useState(null);
+  const [cityCoordinates, setCityCoordinates]=useState(null);
+
+  const handleCityCoordinatesChange = (coordinates) => {
+    setCityCoordinates(coordinates);
+  } //updates cityCoordinates from Weather
 
   const handleCropClick = (crop) => {
     setSelectedCrop(crop);
@@ -55,7 +60,7 @@ function App() {
       
 
       <div className="search">
-        <Weather/>
+        <Weather onCityCoordinatesChange={handleCityCoordinatesChange}/>
       </div>
 
       <div className="weather-main">
@@ -116,7 +121,7 @@ function App() {
          </div>
         </div>
         <div className ="map-container">
-          <StreetMap/>
+          <StreetMap cityCoordinates={cityCoordinates}/> 
         </div>
       </div>
       
