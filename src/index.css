@@ -243,6 +243,10 @@ code {
   border-radius: 10px;
 }
 
+.App .map-container.enlarged {
+  max-height: max-content;
+  z-index: 999;
+}
 
 .App .crop, .App .crop1 {
   background-color: rgb(126, 185, 131);

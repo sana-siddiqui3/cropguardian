@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-function StreetMap({ cityCoordinates, currentTemperature }) {
+function StreetMapPop({ cityCoordinates, currentTemperature }) {
   useEffect(() => {
     if (cityCoordinates) {
       // Create the map
@@ -37,11 +37,4 @@ function StreetMap({ cityCoordinates, currentTemperature }) {
   return <div id="map" style={{ width: '100%', height: '250px' }}></div>;
 }
 
-export default StreetMap;
-
-
-
-
-
-
-
+export default StreetMapPop;
