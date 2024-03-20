@@ -66,7 +66,14 @@ const Weather = ({onCityCoordinatesChange}) => {
 
     useEffect(() => {
         showLoc(); // Get current city on component mount
+        // eslint-disable-next-line 
     }, []);
+
+    useEffect(() => {
+        if (hourlyForecast.length > 0) {
+            drawChart(hourlyForecast);
+        }
+    }, [hourlyForecast]);
 
     const handleInputChange = (e) => {
         setCity(e.target.value);

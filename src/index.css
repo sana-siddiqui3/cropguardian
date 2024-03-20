@@ -240,6 +240,7 @@ code {
   display: flex;
   overflow-y: auto;
   max-height: 10.5rem; 
+  border-radius: 10px;
 }
 
 
@@ -290,6 +291,7 @@ code {
   top: 17%;
   width: 8rem;
   color: #327338;
+  font-style: italic;
 }
 
 .App .soil {
