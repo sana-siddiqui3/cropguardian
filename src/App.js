@@ -84,8 +84,8 @@ function App() {
         </div>
       </div>
 
-      <div className="forcast">
-        <div className="forcast-title">
+      <div className="forecast">
+        <div className="forecast-title">
           <p>Forecast</p>
         </div>
       </div>
@@ -148,7 +148,7 @@ function App() {
       <img src="herb.svg" alt="Herb" className="herb-image" />
 
       <div className="hour">
-        <div className="hourlyforcast-title">
+        <div className="hourlyforecast-title">
           <p>Hourly forecast</p>
         </div>
       </div>

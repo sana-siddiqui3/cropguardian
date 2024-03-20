@@ -18,7 +18,7 @@ code {
 }
 
 .App {
-  width: 200vh;
+  width:100%;
   min-height: 100vh;
   padding: 1rem;
   background-color: rgb(222, 239, 224);
@@ -27,10 +27,19 @@ code {
 .App .weather-main,
 .App .soil,
 .App .hour,
-.App .forcast {
+.App .forecast {
   text-align: left;
   border-radius: 10px;
   background-color: rgb(255, 253, 246);
+}
+
+.city{
+  position: absolute;
+  color: rgb(50, 115, 56);
+  margin-left: 4rem;
+  margin-top: -0.5rem;
+  font-size: small;
+
 }
 
 .App .weather-main {
@@ -42,9 +51,9 @@ code {
 }
 
 .App .weather-main .main-title,
-.App .forcast .forcast-title,
+.App .forecast .forecast-title,
 .App .soil .soil-title,
-.App .hour .hourlyforcast-title {
+.App .hour .hourlyforecast-title {
   color: rgb(50, 115, 56);
   font-weight: bold;
   margin-left: 1rem;
@@ -118,24 +127,23 @@ code {
   color: #327338;
 }
 
-.App .forcast {
+.App .forecast {
   position: absolute;
   width: 21rem;
   height: 24rem;
   padding: 0.rem;
-  margin-top: 1rem;
+  margin-top: 24rem;
   margin-left: 3rem;
-  top: 47%
 }
 
-.App .forcast .forcast-title {
+.App .forecast .forecast-title {
   color: rgb(50, 115, 56);
   font-weight: bold;
   margin-left: 1rem;
 }
 
 .forecast-container {
-  margin-top: 10.25rem;
+  margin-top: 9.5rem;
   color: #327338;
 }
 
@@ -150,73 +158,6 @@ code {
 .days-weather-icon {
   margin-top: -6px;
 }
-
-/*
-.App .crop1{
-  background-color: rgb(126, 185, 131);
-  border-radius: 10px;
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
-  margin-left: 25.5rem;
-  top: 9%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.App .crop2{
-  background-color: rgb(255, 253, 246);
-  border-radius: 10px;
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
-  margin-left: 34rem;
-  top: 9%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.App .crop3{
-  background-color: rgb(126, 185, 131);
-  border-radius: 10px;
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
-  margin-left: 42.5rem;
-  top: 9%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.App .crop4{
-  background-color: rgb(255, 253, 246);
-  border-radius: 10px;
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
-  margin-left: 51rem;
-  top: 9%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.App .crop5{
-  background-color: rgb(126, 185, 131);
-  border-radius: 10px;
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
-  margin-left: 59.5rem;
-  top: 9%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-*/
 
 .App{
   display: flex;
@@ -313,13 +254,12 @@ code {
 .App .hour {
   width: 60rem;
   height: 24rem;
-  margin-top: 1rem;
   margin-left: 25.5rem;
   position: absolute;
-  top: 47%
+  margin-top: 24rem;
 }
 
-.hourlyforcast-container{
+.hourlyforecast-container{
   width: 59rem;
   height: 22rem;
   margin-top: 3.5rem;

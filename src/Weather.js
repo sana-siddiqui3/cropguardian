@@ -217,7 +217,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
         )}
 
        
-        <div className="hourlyforcast-container">
+        <div className="hourlyforecast-container">
             <canvas id="hourlyChartTemp"></canvas>
         </div>
         
