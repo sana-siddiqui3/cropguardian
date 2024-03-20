@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Weather from './Weather';
 import StreetMap from './StreetMap';
 
@@ -41,6 +41,24 @@ export function FluentMdl2Cotton(props) {
 function App() {
   const [selectedCrop, setSelectedCrop] = useState(null);
   const [cityCoordinates, setCityCoordinates]=useState(null);
+  
+  const fetchCoordinates = () => {
+    try{
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(async position => {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+              setCityCoordinates([latitude, longitude]);
+          })
+      }
+    }catch(error){
+      console.error('Error fetching location:', error);
+    }
+  };
+  
+  useEffect(() => {
+      fetchCoordinates();
+  }, []);
 
   const handleCityCoordinatesChange = (coordinates) => {
     setCityCoordinates(coordinates);

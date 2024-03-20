@@ -14,7 +14,7 @@ const Weather = ({onCityCoordinatesChange}) => {
     const [forecastData, setForecastData] = useState(null);
     const [hourlyForecast, setHourlyForecast] = useState([]);
 
-    const fetchData = async () => {
+    const fetchData = async (city) => {
         try {
             const response = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=7de782c975d88bc1d52483ddf682d5e3`
@@ -43,6 +43,31 @@ const Weather = ({onCityCoordinatesChange}) => {
         
     };
 
+    const showLoc = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                axios.get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+                    .then(response => {
+                        const city = response.data.address.city;
+                        setCity(city);
+                        fetchData(city);
+                    })
+                    .catch(error => {
+                        console.error("Error fetching city information:", error);
+                    });
+            });
+        } else {
+            console.error("Geolocation is not supported by this browser.");
+        }
+    };
+
+    useEffect(() => {
+        showLoc(); // Get current city on component mount
+    }, []);
+
     useEffect(() => {
         drawChart(hourlyForecast);
     }, [hourlyForecast]);
@@ -53,7 +78,7 @@ const Weather = ({onCityCoordinatesChange}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetchData();
+        fetchData(city);
     };
 
     function formatDate(timestamp) {
