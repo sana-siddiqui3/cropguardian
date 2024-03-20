@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(222, 239, 224);
 }
 
 code {
@@ -21,7 +22,7 @@ code {
   width:100%;
   min-height: 100vh;
   padding: 1rem;
-  background-color: rgb(222, 239, 224);
+  
 }
 
 .App .weather-main,
@@ -284,6 +285,5 @@ code {
 
 .form-container {
   margin-left: 3.1rem;
-  /* Align the content to the right */
 }
 

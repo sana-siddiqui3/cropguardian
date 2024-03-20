@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart from 'chart.js/auto';
+import {Search} from './Icons';
 
 
 function capitalizeFirstLetter(str) {
@@ -34,7 +35,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
         setHourlyForecast(hourlyData);
         drawChart(hourlyData);
         
-        console.log(forecastResponse.data.list); //You can see all the weather data in console log
+        console.log(hourlyResponse.data.list.slice(0, 9)); //You can see all the weather data in console log
         const coordinates = [response.data.coord.lat, response.data.coord.lon];
         onCityCoordinatesChange(coordinates); //pass coordinates to App
         const temperature = response.data.main.temp; //pass temperature to onTemperatureChange callback
@@ -150,9 +151,26 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
                     datasets: [{
                         label: 'Temperature °C',
                         data: hourlyData.map(entry => Math.round(entry.main.temp)),
+                        borderColor:'rgb(227, 178, 172)',
+                        lineTension: 0.5,
+                        backgroundColor: 'rgba(227, 178, 172, 0.3)',
+                        fill: true,
+                    }, 
+                    {
+                        label: 'Humidity %',
+                        data: hourlyData.map(entry => Math.round(entry.main.humidity)),
                         borderColor:'rgb(186, 232, 191)',
                         lineTension: 0.5,
                         backgroundColor: 'rgba(186, 232, 191, 0.3)',
+                        fill: true,
+                    }, 
+                
+                    {
+                        label: 'Wind m/s',
+                        data: hourlyData.map(entry => Math.round(entry.wind.speed)),
+                        borderColor:'rgb(170, 226, 227)',
+                        lineTension: 0.5,
+                        backgroundColor: 'rgba(170, 226, 227, 0.3)',
                         fill: true,
                     }]
                 },
@@ -179,7 +197,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
             value={city}
             onChange={handleInputChange}
         />
-        <button type="submit">Get Weather</button>
+        <button type="submit"><Search width={10} height={10} /></button>
         </form>
         {weatherData ? (
         <><h2>&nbsp;</h2>

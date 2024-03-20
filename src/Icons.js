@@ -33,3 +33,7 @@ export function Potato(props) {
 export function Cotton(props) {
 	return (<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 2048 2048" {...props}><path fill="black" d="M1504 393q91 18 167 64t131 112t87 150t31 177q0 101-37 191t-103 160t-153 112t-189 48q-71 106-178 173t-236 81v387H896v-387q-128-14-235-81t-179-173q-101-5-189-47t-153-112t-102-160T0 896q0-93 31-176t86-150t132-113t167-64q29-88 83-160t125-124t157-80T960 0q93 0 178 28t157 81t126 124t83 160m-96 887q79 0 149-30t122-82t83-122t30-150q0-79-30-149t-82-122t-123-83t-149-30h-3q-1 0-3 1q-12-82-51-152t-98-123t-134-81t-159-29q-84 0-159 29t-134 81t-98 122t-51 153h-3q-1 0-3-1q-80 1-150 31t-122 81t-82 122t-30 150q0 80 30 149t82 122t122 83t150 30h45q24 51 59 93t79 75t94 54t107 29v-129q-56-12-103-41t-81-70t-53-94t-19-109h128q0 30 9 58t26 53t40 42t53 28V896h128v373q29-10 52-28t41-42t26-52t9-59h128q0 57-19 109t-53 93t-81 71t-103 41v129q55-8 106-29t95-53t79-75t59-94z"></path></svg>);
 }
+
+export function Search(props) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48" {...props}><g fill="none" strokeLinejoin="round" strokeWidth={4}><path fill="#2f88ff" stroke="#000" d="M21 38C30.3888 38 38 30.3888 38 21C38 11.6112 30.3888 4 21 4C11.6112 4 4 11.6112 4 21C4 30.3888 11.6112 38 21 38Z"></path><path stroke="#fff" strokeLinecap="round" d="M26.657 14.3431C25.2093 12.8954 23.2093 12 21.0001 12C18.791 12 16.791 12.8954 15.3433 14.3431"></path><path stroke="#000" strokeLinecap="round" d="M33.2216 33.2217L41.7069 41.707"></path></g></svg>);
+}
