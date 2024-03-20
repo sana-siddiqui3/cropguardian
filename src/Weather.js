@@ -190,12 +190,15 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
 
     return (
     <div>
-        <form onSubmit={handleSubmit} role="search">
-                {/* <label htmlFor="search">Search for stuff</label> */}
-                <input id="search" type="search" placeholder="search" autoFocus
-                required value={city} onChange={handleInputChange} />
-                <button type="submit">➢</button>
-            </form>
+        <form onSubmit={handleSubmit} className = "form-container">
+         <input
+         type="text"
+            placeholder="Enter city name"
+            value={city}
+            onChange={handleInputChange}
+        />
+        <button type="submit"><Search width={10} height={10} /></button>
+        </form>
         {weatherData ? (
         <><h2>&nbsp;</h2>
         <div className="main-temp">{Math.round(weatherData.main.temp)}°C</div>
