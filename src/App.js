@@ -6,6 +6,7 @@ import {Soil, Humidity, Rain, Wheat, Wind, Barley, Corn, Cotton, Potato} from '.
 function App() {
   const [selectedCrop, setSelectedCrop] = useState(null);
   const [cityCoordinates, setCityCoordinates]=useState(null);
+  const[currentTemperature, setCurrentTemperature] = useState(null);
   
   const fetchCoordinates = () => {
     try{
@@ -25,6 +26,10 @@ function App() {
       fetchCoordinates();
   }, []);
 
+  const handleTemperatureChange = (temperature) => {
+    setCurrentTemperature(temperature);
+  };
+
   const handleCityCoordinatesChange = (coordinates) => {
     setCityCoordinates(coordinates);
   } //updates cityCoordinates from Weather
@@ -43,7 +48,7 @@ function App() {
       
 
       <div className="search">
-        <Weather onCityCoordinatesChange={handleCityCoordinatesChange}/>
+        <Weather onCityCoordinatesChange={handleCityCoordinatesChange} onTemperatuerChange={handleTemperatureChange}/>
       </div>
 
       <div className="weather-main">
@@ -104,7 +109,7 @@ function App() {
          </div>
         </div>
         <div className ="map-container">
-          <StreetMap cityCoordinates={cityCoordinates}/> 
+          <StreetMap cityCoordinates={cityCoordinates} currentTemperature={currentTemperature}/> 
         </div>
       </div>
       

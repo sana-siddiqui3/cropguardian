@@ -8,7 +8,7 @@ function capitalizeFirstLetter(str) {
   }
   
 
-const Weather = ({onCityCoordinatesChange}) => {
+const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
     const [forecastData, setForecastData] = useState(null);
@@ -37,6 +37,8 @@ const Weather = ({onCityCoordinatesChange}) => {
         console.log(forecastResponse.data.list); //You can see all the weather data in console log
         const coordinates = [response.data.coord.lat, response.data.coord.lon];
         onCityCoordinatesChange(coordinates); //pass coordinates to App
+        const temperature = response.data.main.temp; //pass temperature to onTemperatureChange callback
+        onTemperatuerChange(temperature); //pass to App
         } catch (error) {
              console.error(error);
         }
