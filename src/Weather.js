@@ -68,7 +68,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
 
     useEffect(() => {
         showLoc(); // Get current city on component mount
-    }, );
+    }, []);
 
     const handleInputChange = (e) => {
         setCity(e.target.value);
