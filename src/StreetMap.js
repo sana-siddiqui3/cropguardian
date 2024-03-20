@@ -6,7 +6,7 @@ function StreetMap({ cityCoordinates, currentTemperature }) {
   useEffect(() => {
     if (cityCoordinates) {
       // Create the map
-      const leafletMap = L.map('map').setView(cityCoordinates, 13);
+      const leafletMap = L.map('map').setView(cityCoordinates, 10);
 
       // Add OpenStreetMap tile layer
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(leafletMap);
