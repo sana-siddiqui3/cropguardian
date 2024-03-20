@@ -80,6 +80,11 @@ code {
   font-size: 0.5rem;
 }
 
+.city-time{
+  position: absolute;
+  color: rgb(50, 115, 56);
+}
+
 .style {
   padding-top: 79px;
   color: #327338;
@@ -279,7 +284,13 @@ code {
   text-align: center;
 }
 
-
+.recommendation{
+  position: absolute;
+  margin-left: 77rem;
+  top: 17%;
+  width: 8rem;
+  color: #327338;
+}
 
 .App .soil {
   position: absolute;
@@ -289,17 +300,12 @@ code {
   top: 7.5%
 } 
 
-.sub-text {
-  display: block;
-  margin-top: 5px;
-}
-
 .herb-image{
   position: absolute;
   width: 13rem;
   height: 20rem;
   margin-left: 66.5rem;
-  top: 10%
+  top: 7.5%
 }
 
 .App .hour {
