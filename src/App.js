@@ -114,10 +114,12 @@ function App() {
             <Cotton width={50} height={100} />
          </div>
         </div>
-        <div className={enlargeMap ? "map-container enlarged" : "map-container"}>
-          <StreetMap cityCoordinates={cityCoordinates} currentTemperature={currentTemperature} />
-          {!enlargeMap && <button onClick={toggleMapSize}>Extend Map</button>}
-          {enlargeMap && <button onClick={toggleMapSize}>Close Extension</button>}
+        <div className={enlargeMap ? "map-container enlarged" : "map-container"}> 
+           <StreetMap cityCoordinates={cityCoordinates} currentTemperature={currentTemperature} />
+        </div> 
+        <div className="map-controls">
+          {!enlargeMap && <button className="extend" onClick={toggleMapSize}>Extend Map</button>}
+          {enlargeMap && <button className="close" onClick={toggleMapSize}>Close Extension</button>}
         </div>
       </div>
       

@@ -248,6 +248,16 @@ code {
   z-index: 999;
 }
 
+.map-controls {
+  z-index: 1000;
+  display: flex;
+  justify-content: left;
+  margin-left: 1rem;
+  margin-top: -2rem; 
+}
+.extend, .close{
+  background-color: white;
+}
 .App .crop, .App .crop1 {
   background-color: rgb(126, 185, 131);
   border-radius: 10px;
