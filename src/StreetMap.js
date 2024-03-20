@@ -34,7 +34,7 @@ function StreetMap({ cityCoordinates, currentTemperature }) {
     }
   }, [cityCoordinates, currentTemperature]);
 
-  return <div id="map" style={{ width: '100%', height: '400px' }}></div>;
+  return <div id="map" style={{ width: '100%', height: '200px' }}></div>;
 }
 
 export default StreetMap;
