@@ -168,16 +168,15 @@ function App() {
           </div>
         </div>
       )}
-
-
+      
       <div className="soil">
         <div className="soil-title">
-        <p>It’s the perfect day <span className="sub-text"> for spraying</span></p>
+        <p>Crop Recommendations</p>
         </div>
       </div>
 
       <img src="herb.svg" alt="Herb" className="herb-image" />
-    
+
       <div className="hour">
         <div className="hourlyforcast-title">
           <p>Hourly forecast</p>

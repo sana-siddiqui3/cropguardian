@@ -68,10 +68,6 @@ const Weather = ({onCityCoordinatesChange}) => {
         showLoc(); // Get current city on component mount
     }, []);
 
-    useEffect(() => {
-        drawChart(hourlyForecast);
-    }, [hourlyForecast]);
-
     const handleInputChange = (e) => {
         setCity(e.target.value);
     };
@@ -87,6 +83,38 @@ const Weather = ({onCityCoordinatesChange}) => {
         var formattedDate = dateObject.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
         return formattedDate;
     }
+    
+    const getRecommendation = () => {
+        if (weatherData) {
+            const temperature = weatherData.main.temp; //35, 0, 14, 6
+            const windSpeed = weatherData.wind.speed;
+
+            let recommendation = '';
+            
+            if (temperature > 30) {
+                recommendation = 'Extreme heat warning. Provide shade and ample water for your crops and livestock to prevent heat stress and maintain their well-being.';
+            }
+            else if (temperature <= 0) {
+                recommendation = 'Extreme cold warning. Consider using row covers or mulch to protect crops from frost damage.';
+            } 
+            else if (temperature > 20) {
+                recommendation = 'Ensure both yourself and your crops have access to plenty of clean water to stay hydrated.';
+            } 
+            else if (temperature < 10){
+                recommendation = 'In cold, dry weather, protect your crops by providing insulation and ensuring adequate heat sources and moisture levels in the soil.';
+            }
+            else {
+                recommendation = 'Maintain regular crop monitoring and ensure proper irrigation and nutrition during average temperatures for optimal growth and yield.';
+            }
+
+            if (windSpeed > 9) {
+                recommendation = 'High wind speeds detected. Secure loose objects and structures on the farm to prevent damage and ensure the safety of crops and livestock.';
+            }
+            return recommendation;
+        }
+        return '';
+
+    };
 
     const drawChart = (hourlyData) => {
         const label = hourlyData.map(entry => {
@@ -117,10 +145,8 @@ const Weather = ({onCityCoordinatesChange}) => {
                         lineTension: 0.5,
                         backgroundColor: 'rgba(186, 232, 191, 0.3)',
                         fill: true,
-                }
-                ]
-                }
-                ,
+                    }]
+                },
 
                 options: {
                     responsive: true,
@@ -156,12 +182,12 @@ const Weather = ({onCityCoordinatesChange}) => {
         <div className='style'>
         <div className="moisture">85%</div>
         <div className="humidity"> {weatherData.main.humidity}%</div>
-        <div className="rain">{Math.round(weatherData.rain)}mm</div>
+        <div className="rain">{forecastData && forecastData.length > 0 ? `${forecastData[0].rain || 0}mm` : '0'}</div>
         <div className="wind">{Math.round(weatherData.wind.speed)}m/s</div> 
         </div>
 
         <div className="forecast-container">
-        {forecastData && forecastData.slice(0, 7).map((item, index) => (
+        {forecastData && forecastData.slice(0,7).map((item, index) => (
             <div key={index}>
                 <div className="forecast-content">
                     {item.weather[0].icon && (
@@ -173,6 +199,8 @@ const Weather = ({onCityCoordinatesChange}) => {
             </div>
         ))}
         </div>
+
+      <div className="recommendation">{getRecommendation()}</div>
 
         </>
         ) : (
