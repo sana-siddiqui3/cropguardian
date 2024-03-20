@@ -7,6 +7,8 @@ function App() {
   const [selectedCrop, setSelectedCrop] = useState(null);
   const [cityCoordinates, setCityCoordinates]=useState(null);
   const[currentTemperature, setCurrentTemperature] = useState(null);
+  const [enlargeMap, setEnlargeMap] = useState(false);
+  
   
   const fetchCoordinates = () => {
     try{
@@ -40,6 +42,10 @@ function App() {
 
   const closePopOut = () => {
     setSelectedCrop(null);
+  };
+
+  const toggleMapSize = () => {
+    setEnlargeMap(!enlargeMap); // Enlarge the map
   };
 
   return (
@@ -108,8 +114,12 @@ function App() {
             <Cotton width={50} height={100} />
          </div>
         </div>
-        <div className ="map-container">
-          <StreetMap cityCoordinates={cityCoordinates} currentTemperature={currentTemperature}/> 
+        <div className={enlargeMap ? "map-container enlarged" : "map-container"}> 
+           <StreetMap cityCoordinates={cityCoordinates} currentTemperature={currentTemperature} />
+        </div> 
+        <div className="map-controls">
+          {!enlargeMap && <button className="extend" onClick={toggleMapSize}>Extend Map</button>}
+          {enlargeMap && <button className="close" onClick={toggleMapSize}>Close Extension</button>}
         </div>
       </div>
       
