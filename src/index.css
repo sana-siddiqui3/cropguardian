@@ -38,9 +38,8 @@ code {
   position: absolute;
   color: rgb(50, 115, 56);
   margin-left: 4rem;
-  margin-top: -0.5rem;
+  margin-top: -1rem;
   font-size: small;
-
 }
 
 .App .weather-main {
@@ -84,15 +83,10 @@ code {
 }
 
 .App .weather-info {
-  margin-top: 10.3rem;
+  margin-top: 11rem;
   margin-left: 3rem;
   display: flex;
   font-size: 0.5rem;
-}
-
-.city-time{
-  position: absolute;
-  color: rgb(50, 115, 56);
 }
 
 .style {
@@ -284,6 +278,34 @@ code {
 }
 
 .form-container {
+  display: flex;
   margin-left: 3.1rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-input {
+  border: none;
+  padding: 5px;
+  font-size: 15px;
+  flex: 1;
+  outline: none;
+}
+
+.search-button {
+  color: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
 }
 

@@ -190,17 +190,24 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
 
     return (
     <div>
-        <form onSubmit={handleSubmit} className = "form-container">
-         <input
-         type="text"
+        <form onSubmit={handleSubmit} className="form-container">
+        <div className="search-container">
+            <input
+            type="text"
             placeholder="Enter city name"
             value={city}
             onChange={handleInputChange}
-        />
-        <button type="submit"><Search width={10} height={10} /></button>
+            className="search-input"
+            />
+            <button type="submit" className="search-button">
+            <Search width={15} height={15} />
+            </button>
+        </div>
         </form>
+
         {weatherData ? (
         <><h2>&nbsp;</h2>
+        <div className="city">{(weatherData.name)}</div>
         <div className="main-temp">{Math.round(weatherData.main.temp)}°C</div>
         <div className="main-description">{capitalizeFirstLetter(weatherData.weather[0].description)}</div>
         {weatherData.weather[0].icon && (
