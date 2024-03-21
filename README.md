@@ -44,7 +44,7 @@ To use the interactive map, you need to install the Leaflet library by running:
 ```
 npm install leaflet 
 ```
-To render the hourly forecast chart, you will need to import the chart.js library by running: 
+To render the hourly forecast chart, you need to install the chart.js library by running: 
 
 ```
 npm install chart.js
