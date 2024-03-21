@@ -182,7 +182,9 @@ code {
   display: flex;
   overflow-y: auto;
   max-height: 10.5rem; 
-  border-radius: 10px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #000000; 
 }
 
 .App .map-container.enlarged {
