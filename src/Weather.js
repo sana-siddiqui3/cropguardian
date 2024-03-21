@@ -120,7 +120,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
                 recommendation = 'Maintain regular crop monitoring and ensure proper irrigation and nutrition during average temperatures for optimal growth and yield.';
             }
 
-            if (windSpeed > 9) {
+            if (windSpeed > 14) {
                 recommendation = 'High wind speeds detected. Secure loose objects and structures on the farm to prevent damage and ensure the safety of crops and livestock.';
             }
             return recommendation;
