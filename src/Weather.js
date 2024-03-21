@@ -208,6 +208,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
             </button>
         </div>
         </form>
+        {/*Current weather conditions*/} 
         {weatherData ? (
         <><h2>&nbsp;</h2>
         <div className="city">{(weatherData.name)}</div>
