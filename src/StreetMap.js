@@ -5,18 +5,17 @@ import 'leaflet/dist/leaflet.css';
 function StreetMap({ cityCoordinates, currentTemperature }) {
   useEffect(() => {
     if (cityCoordinates) {
-      // Create the map
       const leafletMap = L.map('map').setView(cityCoordinates, 10);
 
-      // Add OpenStreetMap tile layer
+      // Add OpenStreetMap 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(leafletMap);
 
       // Customize marker icon
       const customIcon = L.icon({
         iconUrl: process.env.PUBLIC_URL + '/locpin.png', 
-        iconSize: [32, 32], // Size of the icon
-        iconAnchor: [16, 32], // Position of the icon 
-        popupAnchor: [0, -32], // Position of popup 
+        iconSize: [32, 32], 
+        iconAnchor: [16, 32], 
+        popupAnchor: [0, -32], 
       });
 
       // Add marker with custom icon

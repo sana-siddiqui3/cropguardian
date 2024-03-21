@@ -8,7 +8,7 @@ function capitalizeFirstLetter(str) {
     return str.replace(/\b\w/g, (char) => char.toUpperCase());
   }
   
-
+//API Data from OpenWeather 
 const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
@@ -46,6 +46,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
         
     };
 
+    //access location, automatically locate map 
     const showLoc = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
@@ -87,6 +88,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
         fetchData(city);
     };
 
+    //Weekly forcecast 
     function formatDate(timestamp) {
         var milliseconds = timestamp * 1000;
         var dateObject = new Date(milliseconds);
@@ -94,6 +96,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
         return formattedDate;
     }
     
+    //Recommendations based on temperature 
     const getRecommendation = () => {
         if (weatherData) {
             const temperature = weatherData.main.temp; //35, 0, 14, 6
@@ -126,6 +129,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
 
     };
 
+    //Hourly forecast graph 
     const drawChart = (hourlyData) => {
         const label = hourlyData.map(entry => {
             const dateTime = new Date(entry.dt_txt);
@@ -199,6 +203,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
         />
         <button type="submit"><Search width={10} height={10} /></button>
         </form>
+        {/*Current weather and conditions from searched city*/} 
         {weatherData ? (
         <><h2>&nbsp;</h2>
         <div className="main-temp">{Math.round(weatherData.main.temp)}°C</div>
@@ -206,13 +211,12 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
         {weatherData.weather[0].icon && (
             <img src={getWeatherIconUrl(weatherData.weather[0].icon)} alt="Weather Icon" className="current-weather-icon"/>
         )} 
-        <div className='style'>
-        <div className="moisture">85%</div>
-        <div className="humidity"> {weatherData.main.humidity}%</div>
-        <div className="rain">{forecastData && forecastData.length > 0 ? `${forecastData[0].rain || 0}mm` : '0'}</div>
-        <div className="wind">{Math.round(weatherData.wind.speed)}m/s</div> 
-        </div>
-
+        <div className="style"> 
+            <div className="moisture">85%</div>
+            <div className="humidity"> {weatherData.main.humidity}%</div>
+            <div className="rain">{forecastData && forecastData.length > 0 ? `${forecastData[0].rain || 0}mm` : '0'}</div>
+            <div className="wind">{Math.round(weatherData.wind.speed)}m/s</div> 
+        </div> 
         <div className="forecast-container">
         {forecastData && forecastData.slice(0,7).map((item, index) => (
             <div key={index}>
@@ -234,7 +238,7 @@ const Weather = ({onCityCoordinatesChange, onTemperatuerChange}) => {
             <h2>&nbsp;</h2>
         )}
 
-       
+        {/*graph*/} 
         <div className="hourlyforecast-container">
             <canvas id="hourlyChartTemp"></canvas>
         </div>

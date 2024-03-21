@@ -9,7 +9,7 @@ function App() {
   const[currentTemperature, setCurrentTemperature] = useState(null);
   const [enlargeMap, setEnlargeMap] = useState(false);
   
-  
+  //
   const fetchCoordinates = () => {
     try{
       if (navigator.geolocation) {
@@ -52,13 +52,10 @@ function App() {
     
     <div className="App">
       
-
       <div className="search">
         <Weather onCityCoordinatesChange={handleCityCoordinatesChange} onTemperatuerChange={handleTemperatureChange}/>
       </div>
-
       <div className="weather-main">
-
         <div className="main-title">
           <p>Current Weather</p>
         </div>
