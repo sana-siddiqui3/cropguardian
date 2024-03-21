@@ -184,7 +184,7 @@ code {
   max-height: 10.5rem; 
   border-radius: 15px;
   border-radius: 15px;
-  border: 1px solid #000000; 
+  border: 2px solid #000000; 
 }
 
 .App .map-container.enlarged {
