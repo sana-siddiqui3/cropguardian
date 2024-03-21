@@ -1,3 +1,69 @@
+# Crop Guardian
+
+Crop Guardian is the weather application for farmers. Tailored to suit essential agricultural needs, it delivers reliable weather data for anywhere in the world. With intuitive features such as an hourly weather trends chart and real time recommendations specific to their location, farmers can make informed decisions around planting, harvesting and other critical farming activities. Whether it's monitoring precipitation levels, wind speeds, humidity, or temperature fluctuations, our app equips farmers with the necessary tools to optimize their workload and manage weather risks effectively. 
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+
+### Prerequisites
+ 
+Before you begin, ensure you have the following installed to run the React code and install the dependencies: 
+- [Node.js](https://nodejs.org/en/): JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+### Installing
+ 
+Follow these steps to set up the development environment: 
+
+1. Download the zip folder containing the project files
+
+2. Extract the contents of the zip folder on to a location on your local machine. 
+
+3. Open a terminal or command prompt and navigate to the directory where you extracted the project files. Or open the folder in your chosen IDE and open a new terminal there. 
+For example, in Visual Studio Code. 
+
+4. Install the necessary dependencies by running the following command:
+```
+npm install
+```
+This project relies on the following dependencies: 
+```
+"dependencies": {
+**@testing-library/jest-dom**: A library for testing React components using jest-dom matchers.
+**@testing-library/react**: A library for testing React components.
+**@testing-library/user-event**: A library for simulating user events when testing React components.
+**axios**: A popular JavaScript library for making HTTP requests from the browser or Node.js.
+**react**: A JavaScript library for building user interfaces.
+**react-dom**: A package for working with the DOM in React applications.
+**react-scripts**: A set of scripts and configuration used by Create React App.
+**web-vitals**: A library for measuring all the Web Vitals metrics on your website.
+}
+```
+To use the interactive map, you need to install the Leaflet library by running: 
+```
+npm install leaflet 
+```
+
+## Running the App
+Running the following command should open the application in your browser. 
+```
+npm start
+```
+
+## Credits
+
+The application uses the following open source packages:
+
+- [React](https://reactjs.org/): JavaScript library for building user interfaces.
+- [Leaflet](https://leafletjs.com/): Open-source JavaScript library for interactive maps.
+- [Chart.js](https://www.chartjs.org/): Simple yet flexible JavaScript charting for designers and developers.
+
+Data Sources:
+
+- [OpenWeatherMap API](https://openweathermap.org/api): Provides weather data and forecasts for locations worldwide.
+- [OpenStreetMap](https://www.openstreetmap.org/): Collaborative mapping project. Interactive map. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -8,11 +74,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ### `npm test`
 
