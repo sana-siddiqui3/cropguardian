@@ -4,8 +4,7 @@ Crop Guardian is the weather application for farmers. Tailored to suit essential
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
+These instructions will get you a copy of the project up and running on your local machine. 
 
 ### Prerequisites
  
@@ -51,7 +50,7 @@ npm install chart.js
 ```
 
 ## Running the App
-Running the following command should open the application in your browser. 
+Running the following command should open the application in your browser:
 ```
 npm start
 ```
