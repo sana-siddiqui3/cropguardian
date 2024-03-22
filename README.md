@@ -61,7 +61,7 @@ The application uses the following open source packages:
 
 - [React](https://reactjs.org/): JavaScript library for building user interfaces.
 - [Leaflet](https://leafletjs.com/): Open-source JavaScript library for interactive maps.
-- [Chart.js](https://www.chartjs.org/): Simple yet flexible JavaScript charting for designers and developers.
+- [Chart.js](https://www.chartjs.org/): JavaScript charting for designers and developers.
 
 Data Sources:
 
