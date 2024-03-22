@@ -44,7 +44,7 @@ To use the interactive map, you need to install the Leaflet library by running:
 ```
 npm install leaflet 
 ```
-To render the hourly forecast chart, you need to install the chart.js library by running: 
+To render the hourly forecast chart, you need to the chart.js library by running: 
 
 ```
 npm install chart.js
@@ -78,7 +78,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm start`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
 
 ### `npm test`
