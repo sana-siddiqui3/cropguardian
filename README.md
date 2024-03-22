@@ -1,6 +1,6 @@
 # Crop Guardian
 
-Crop Guardian is the weather application for farmers. Tailored to suit essential agricultural needs, it delivers reliable weather data for anywhere in the world. With intuitive features such as real time recommendations specific to their location, farmers can make informed decisions around planting, harvesting and other critical farming activities. Whether it's monitoring precipitation levels, wind speeds, humidity, or temperature fluctuations, our app equips farmers with the necessary tools to optimize their workload and manage weather risks effectively. 
+Crop Guardian is the weather application for farmers. Tailored to suit essential agricultural needs, it delivers reliable weather data for anywhere in the world. With intuitive features such as real time recommendations specific to their location, farmers can make informed decisions around planting, harvesting and other critical farming activities. Whether it's monitoring precipitation levels, wind speeds, humidity, or temperature fluctuations, our app equips farmers with the necessary tools to manage weather risks effectively. 
 
 ## Getting Started
 
